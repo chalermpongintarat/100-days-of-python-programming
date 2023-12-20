@@ -1,5 +1,5 @@
 # Setup
-First thing, register your application in the reCAPTCHA admin.
+First thing, register your application in the [reCAPTCHA admin](https://www.google.com/recaptcha/admin).
 
 ### settings.py
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
