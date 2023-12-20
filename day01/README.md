@@ -73,5 +73,8 @@ def comments(request):
     return render(request, 'core/comments.html', {'comments': comments_list, 'form': form})
 ```
 
+## Using reCAPTCHA on localhost
+https://stackoverflow.com/questions/3232904/using-recaptcha-on-localhost
+
 ### Reference
 https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html
