@@ -7,6 +7,7 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
 ```
 
 # Implementing the reCAPTCHA
+```
 {% extends 'base.html' %}
 
 {% block content %}
@@ -20,10 +21,12 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
     <button type="submit" class="btn btn-primary">Post</button>
   </form>
 {% endblock %}
+```
 
 # Validating the reCAPTCHA
 ## Python 3 Solution without Third Party Libraries
 ### views.py
+```
 import json
 import urllib
 
@@ -66,6 +69,7 @@ def comments(request):
         form = CommentForm()
 
     return render(request, 'core/comments.html', {'comments': comments_list, 'form': form})
+```
 
 ## Reference
 https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html
