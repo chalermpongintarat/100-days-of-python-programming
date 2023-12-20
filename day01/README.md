@@ -1,14 +1,14 @@
 # Day 1: How to Add reCAPTCHA to a Django Site
 
-# Setup
+## Setup
 First thing, register your application in the [reCAPTCHA admin](https://www.google.com/recaptcha/admin).
 
-### settings.py
+#### settings.py
 ```
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
 ```
 
-# Implementing the reCAPTCHA
+## Implementing the reCAPTCHA
 ```
 {% extends 'base.html' %}
 
@@ -25,9 +25,9 @@ GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
 {% endblock %}
 ```
 
-# Validating the reCAPTCHA
-## Python 3 Solution without Third Party Libraries
-### views.py
+## Validating the reCAPTCHA
+### Python 3 Solution without Third Party Libraries
+#### views.py
 ```
 import json
 import urllib
@@ -73,5 +73,5 @@ def comments(request):
     return render(request, 'core/comments.html', {'comments': comments_list, 'form': form})
 ```
 
-## Reference
+### Reference
 https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html
