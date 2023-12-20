@@ -74,7 +74,8 @@ def comments(request):
 ```
 
 ## Using reCAPTCHA on localhost
-https://stackoverflow.com/questions/3232904/using-recaptcha-on-localhost
+This will only work if you access localhost using 127.0.0.1/... rather than localhost/....
 
 ### Reference
 https://simpleisbetterthancomplex.com/tutorial/2017/02/21/how-to-add-recaptcha-to-django-site.html
+https://stackoverflow.com/questions/3232904/using-recaptcha-on-localhost
