@@ -1,3 +1,5 @@
+# Day 1: How to Add reCAPTCHA to a Django Site
+
 # Setup
 First thing, register your application in the [reCAPTCHA admin](https://www.google.com/recaptcha/admin).
 
