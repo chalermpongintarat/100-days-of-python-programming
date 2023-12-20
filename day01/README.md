@@ -8,6 +8,11 @@ First thing, register your application in the [reCAPTCHA admin](https://www.goog
 GOOGLE_RECAPTCHA_SECRET_KEY = '6LdRSRYUAAAAAOnk5yomm1dI9BmQkJWTg_wIlMJ_'
 ```
 
+```
+pip install captcha
+pip install django-recaptcha
+```
+
 ## Implementing the reCAPTCHA
 ```
 {% extends 'base.html' %}
