@@ -17,7 +17,7 @@ conda create --name env_nf nextflow
 git clone https://github.com/nextflow-io/training.git
 ```
 
-### Nextflow Running
+### Nextflow Run
 ```
 nextflow run hello.nf
 ```
