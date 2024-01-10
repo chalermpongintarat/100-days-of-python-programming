@@ -1,6 +1,6 @@
 # Day 3: Insert Database (JSON file) to MongoDB
 
-## Install
+## Package Install
 ```
 pip install pymongo
 ```
