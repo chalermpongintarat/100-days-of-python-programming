@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Generate PDF</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="icon" href="">
+    <style>
+        @font-face {
+            font-family: DejaVuSans;
+            src: url("c:/progr/py/django-pdf-guide/django_pdf_guide/DejaVuSans.ttf");
+        }
+        body {
+            font-family: DejaVuSans;
+        }
+    </style>
+    <style type="text/css">
+        body {
+            font-weight: 200;
+            font-size: 14px;
+        }
+        .header {
+            font-size: 20px;
+            font-weight: 100;
+            text-align: center;
+            color: #007cae;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: 100;
+            /* text-align: right;*/
+            padding: 10px 20px 0px 20px;
+        }
+        .title span {
+            color: #007cae;
+        }
+        .details {
+            padding: 10px 20px 0px 20px;
+            text-align: left !important;
+            /*margin-left: 40%;*/
+        }
+        .hrItem {
+            border: none;
+            height: 1px;
+            /* Set the hr color */
+            color: #333;
+            /* old IE */
+            background-color: #fff;
+            /* Modern Browsers */
+        }
+        .table {
+            font-size: 12px;
+            padding: 4px 1px 0px 2px;
+            /* text-align: center; */
+            /* border: 1px solid rgb(116, 116, 116); */
+        }
+        td {
+            border: none;
+        }
+        th {
+            border: none;
+        }
+        tr {
+            border: none;
+        }
+        .blue {
+            font-size: 24px;
+            font-weight: 600;
+            color: rgb(0, 3, 177)
+        }
+        .text-left {
+            text-align: left !important;
+        }
+        .text-right {
+            text-align: right !important;
+        }
+        .text-center {
+            text-align: center !important;
+        }
+        .gene_line {
+		    border-top: 2px double black;
+		}
+		.drug_line {
+		    border-top: 2px double black;
+		    padding: 10px 0;
+		}
+		.allele_line {
+		    border-top: 1px double #333;
+		    padding: 10px 0;
+		}
+    </style>
+    <script type="text/javascript" src="{% static 'fusioncharts/fusioncharts.js' %}"></script>
+    <style>
+        @page {
+            size: a4 portrait;
+            @frame header_frame {           /* Static Frame */
+                -pdf-frame-content: header_content;
+                left: 0pt; width: 800pt; top: 0pt; height: 100pt;
+            }
+            @frame content_frame {          /* Content Frame */
+                left: 20pt; width: 555pt; top: 90pt; height: 632pt;
+            }
+            @frame footer_frame {           /* Another static Frame */
+                -pdf-frame-content: footer_content;
+                left: 0pt; width: 800pt; top: 772pt; height: 100pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header_content">
+        <img src="" width="791" height=""/>
+    </div>
+    <div id="footer_content">
+        <img src="" width="791" height=""/>
+    </div>
+    <div class='wrapper'>
+        <div class='details'>
+            <div style="text-align: center; color: #3CB371; font-size: 26px; font-weight: 600">
+                <p>Generate PDF</p>
+            </div>
+            <div style="border: 1px solid rgb(116, 116, 116)">
+                {% for content in contents %}
+                    <p>{{ content }}</p>
+                {% endfor %}
+            </div>
+            <pdf:nextpage />
+        </div>
+    </div>
+</body>
+</html>
