@@ -23,6 +23,7 @@ file_exception = open("exception.txt", "a")
 
 path = "/sample/"
 dir_list = os.listdir(path)
+
 for x in dir_list:
     try:
         if '.' not in x:
@@ -36,6 +37,13 @@ for x in dir_list:
                     db_name = y
                     collJson = mydb[db_name]
 
+                    db_import = y+"_import_1"
+                    collImport = mydb[db_import]
+                    list_of_collections = mydb.list_collection_names()
+                    if db_import not in list_of_collections:
+                        print('DELETE json')
+                        mydb.drop_collection(db_name)
+                    
                     list_of_collections = mydb.list_collection_names()
                     if db_name not in list_of_collections:
                         json_path = path + x
@@ -47,6 +55,12 @@ for x in dir_list:
                                 with open(json_path+'/'+y) as f:
                                     file_data = json.load(f)
                                 collJson.insert_many(file_data)
+
+                    print(db_import)
+                    collImport.update_one(
+                        {'import': True}, {"$set": {'import': True}}, True)
+                    print()
+                    print("--- %s seconds ---" % (time.time() - start_time))
 
                 except Exception as e:
                     strError = str(traceback.format_exc())
